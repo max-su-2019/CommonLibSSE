@@ -27,7 +27,7 @@ namespace RE
 
 		static float GetWorldScaleInverse()
 		{
-			REL::Relocation<float*> worldScaleInverse{ REL::ID(187407)};
+			REL::Relocation<float*> worldScaleInverse{ REL::ID(187407) };
 			return *worldScaleInverse;
 		}
 
