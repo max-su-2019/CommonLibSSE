@@ -50,7 +50,6 @@ namespace RE
 	};
 	static_assert(sizeof(bhkRigidBody) == 0x40);
 
-
 	class bhkRigidBodyT : bhkRigidBody
 	{
 	public:
