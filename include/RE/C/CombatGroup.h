@@ -8,7 +8,6 @@
 #include "RE/B/BSPointerHandle.h"
 #include "RE/C/CombatGroupDetectionListener.h"
 
-
 namespace RE
 {
 	class BSPathingLOSGridMap;
@@ -18,24 +17,24 @@ namespace RE
 	public:
 		struct TargetData
 		{
-			ActorHandle			targetHandle;                   // 00
-			std::int32_t		detectLevel;                    // 04
-			float				attackedStealthPoints;          // 08
-			float				unk0C;                          // 0C
-			BGSWorldLocation	unk10;                          // 10
-			BGSWorldLocation	unk28;                          // 28
-			BGSWorldLocation	unk40;                          // 40
-			BGSWorldLocation	searchLoc;                      // 58
-			BGSWorldLocation	unk70;                          // 70
-			AITimeStamp			unk88;                          // 88
-			AITimeStamp			unk8C;                          // 8C
-			AITimeStamp			unk90;                          // 9C
-			AITimeStamp			unk94;                          // 94
-			AITimeStamp			stealthPointRegenAttackedTime;  // 98
-			AITimeStamp			stealthPointRegenDetectTime;    // 9C
-			ActorHandle			attackedMember;                 // A0
-			std::uint16_t		unkA4;                          // A4 - target count
-			std::uint16_t		unkA6;                          // A6 - flags
+			ActorHandle      targetHandle;                   // 00
+			std::int32_t     detectLevel;                    // 04
+			float            attackedStealthPoints;          // 08
+			float            unk0C;                          // 0C
+			BGSWorldLocation unk10;                          // 10
+			BGSWorldLocation unk28;                          // 28
+			BGSWorldLocation unk40;                          // 40
+			BGSWorldLocation searchLoc;                      // 58
+			BGSWorldLocation unk70;                          // 70
+			AITimeStamp      unk88;                          // 88
+			AITimeStamp      unk8C;                          // 8C
+			AITimeStamp      unk90;                          // 9C
+			AITimeStamp      unk94;                          // 94
+			AITimeStamp      stealthPointRegenAttackedTime;  // 98
+			AITimeStamp      stealthPointRegenDetectTime;    // 9C
+			ActorHandle      attackedMember;                 // A0
+			std::uint16_t    unkA4;                          // A4 - target count
+			std::uint16_t    unkA6;                          // A6 - flags
 		};
 		static_assert(sizeof(TargetData) == 0xA8);
 
@@ -49,9 +48,9 @@ namespace RE
 
 		struct Data120
 		{
-			BGSWorldLocation	unk00;  // 10
-			AITimeStamp			unk18;  // 18
-			float				unk20;  // 20
+			BGSWorldLocation unk00;  // 10
+			AITimeStamp      unk18;  // 18
+			float            unk20;  // 20
 		};
 		static_assert(sizeof(Data120) == 0x20);
 

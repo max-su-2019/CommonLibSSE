@@ -4,8 +4,8 @@
 
 #include "RE/A/AIFormulas.h"
 #include "RE/A/AIProcess.h"
-#include "RE/A/AITimer.h"
 #include "RE/A/AITimeStamp.h"
+#include "RE/A/AITimer.h"
 #include "RE/A/AbsorbEffect.h"
 #include "RE/A/AbstractHeap.h"
 #include "RE/A/ActivateHandler.h"

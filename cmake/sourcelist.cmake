@@ -2,6 +2,7 @@ set(SOURCES
 	include/RE/A/AIFormulas.h
 	include/RE/A/AIProcess.h
 	include/RE/A/AITimeStamp.h
+	include/RE/A/AITimer.h
 	include/RE/A/AbsorbEffect.h
 	include/RE/A/AbstractHeap.h
 	include/RE/A/ActivateHandler.h
@@ -167,6 +168,7 @@ set(SOURCES
 	include/RE/B/BGSTypedItem.h
 	include/RE/B/BGSVoiceType.h
 	include/RE/B/BGSVolumetricLighting.h
+	include/RE/B/BGSWorldLocation.h
 	include/RE/B/BSAnimNote.h
 	include/RE/B/BSAnimNoteListener.h
 	include/RE/B/BSAnimationGraphChannel.h
@@ -347,6 +349,7 @@ set(SOURCES
 	include/RE/C/CodeTasklet.h
 	include/RE/C/CollisionLayers.h
 	include/RE/C/Color.h
+	include/RE/C/CombatGroup.h
 	include/RE/C/CombatGroupDetectionListener.h
 	include/RE/C/CommandTable.h
 	include/RE/C/CommonTypeTraits.h
@@ -1411,6 +1414,7 @@ set(SOURCES
 	src/RE/N/NiTCollection.cpp
 	src/RE/N/NiTexture.cpp
 	src/RE/N/NiTimeController.cpp
+	src/RE/N/NiTransform.cpp
 	src/RE/O/Object.cpp
 	src/RE/O/ObjectTypeInfo.cpp
 	src/RE/P/PackUnpack.cpp
