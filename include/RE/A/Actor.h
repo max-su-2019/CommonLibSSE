@@ -502,6 +502,7 @@ namespace RE
 		[[nodiscard]] TESObjectARMO* GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] TESObjectARMO* GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] TESObjectARMO* GetWornArmor(FormID a_formID);
+		bool                         HasLOS(Actor* a_target, std::uint32_t a_arg1 = 3U) const;
 		bool                         HasPerk(BGSPerk* a_perk) const;
 		void                         InterruptCast(bool a_restoreMagicka) const;
 		bool                         IsAIEnabled() const;
@@ -520,7 +521,9 @@ namespace RE
 		bool                         IsRunning() const;
 		bool                         IsSneaking() const;
 		[[nodiscard]] bool           IsSummoned() const noexcept;
+		[[nodiscard]] bool           IsSummonedByPlayer() const noexcept;
 		bool                         IsTrespassing() const;
+		[[nodiscard]] bool           NotShowOnStealthMeter() const noexcept { return boolFlags.all(BOOL_FLAGS::kDoNotShowOnStealthMeter); }
 		void                         RemoveExtraArrows3D();
 		bool                         RemoveSpell(SpellItem* a_spell);
 		std::int32_t                 RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal);
