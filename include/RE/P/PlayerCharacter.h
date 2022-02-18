@@ -274,13 +274,22 @@ namespace RE
 		static bool             IsGodMode();
 
 		template <class T>
-		void AddEventSink(BSTEventSink<T>* a_sink);
+		void AddEventSink(BSTEventSink<T>* a_sink)
+		{
+			GetEventSource<T>()->AddEventSink(a_sink);
+		}
 
 		template <class T>
-		BSTEventSource<T>* GetEventSource();
+		BSTEventSource<T>* GetEventSource()
+		{
+			return static_cast<BSTEventSource<T>*>(this);
+		}
 
 		template <class T>
-		void RemoveEventSink(BSTEventSink<T>* a_sink);
+		inline void RemoveEventSink(BSTEventSink<T>* a_sink)
+		{
+			GetEventSource<T>()->RemoveEventSink(a_sink);
+		}
 
 		void                     ActivatePickRef();
 		void                     AddSkillExperience(ActorValue a_skill, float a_experience);
@@ -474,22 +483,4 @@ namespace RE
 		bool CenterOnCell_Impl(const char* a_cellName, RE::TESObjectCELL* a_cell);
 	};
 	static_assert(sizeof(PlayerCharacter) == 0xBE0);
-
-	template <class T>
-	void PlayerCharacter::AddEventSink(BSTEventSink<T>* a_sink)
-	{
-		GetEventSource<T>()->AddEventSink(a_sink);
-	}
-
-	template <class T>
-	BSTEventSource<T>* PlayerCharacter::GetEventSource()
-	{
-		return static_cast<BSTEventSource<T>*>(this);
-	}
-
-	template <class T>
-	inline void PlayerCharacter::RemoveEventSink(BSTEventSink<T>* a_sink)
-	{
-		GetEventSource<T>()->RemoveEventSink(a_sink);
-	}
 }
