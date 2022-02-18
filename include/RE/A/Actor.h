@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/A/AIProcess.h"
 #include "RE/A/AITimeStamp.h"
 #include "RE/A/ActiveEffect.h"
 #include "RE/A/ActorState.h"
@@ -497,8 +498,9 @@ namespace RE
 		[[nodiscard]] NiAVObject*    GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		float                        GetHeight();
 		std::uint16_t                GetLevel() const;
-		float						 GetMovementDirection() const;
+		float                        GetMovementDirection() const;
 		ObjectRefHandle              GetOccupiedFurniture() const;
+		PROCESS_TYPE                 GetProcessLevel() const;
 		TESRace*                     GetRace() const;
 		[[nodiscard]] TESObjectARMO* GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] TESObjectARMO* GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
@@ -510,7 +512,7 @@ namespace RE
 		bool                         IsAMount() const;
 		bool                         IsAnimationDriven() const;
 		bool                         IsBeingRidden() const;
-		bool						 IsBlocking() const;
+		bool                         IsBlocking() const;
 		bool                         IsCommandedActor() const;
 		bool                         IsEssential() const;
 		bool                         IsFactionInCrimeGroup(const TESFaction* a_faction) const;
@@ -519,7 +521,7 @@ namespace RE
 		bool                         IsHostileToActor(Actor* a_actor);
 		bool                         IsInJumpState() const;
 		[[nodiscard]] constexpr bool IsInKillMove() const noexcept { return boolFlags.all(BOOL_FLAGS::kIsInKillMove); }
-		bool						 IsMoving() const;
+		bool                         IsMoving() const;
 		bool                         IsOnMount() const;
 		bool                         IsPlayerTeammate() const;
 		bool                         IsRunning() const;
@@ -528,7 +530,7 @@ namespace RE
 		[[nodiscard]] bool           IsSummoned() const noexcept;
 		[[nodiscard]] bool           IsSummonedByPlayer() const noexcept;
 		bool                         IsTrespassing() const;
-		void						 MoveToPackageLoaction(bool a_arg1 = false) const;
+		void                         MoveToPackageLoaction(bool a_arg1 = false) const;
 		[[nodiscard]] bool           NotShowOnStealthMeter() const noexcept { return boolFlags.all(BOOL_FLAGS::kDoNotShowOnStealthMeter); }
 		void                         RemoveExtraArrows3D();
 		bool                         RemoveSpell(SpellItem* a_spell);

@@ -1,6 +1,5 @@
 #include "RE/A/Actor.h"
 
-#include "RE/A/AIProcess.h"
 #include "RE/B/BGSAttackData.h"
 #include "RE/B/BGSColorForm.h"
 #include "RE/B/BGSDefaultObjectManager.h"
@@ -272,16 +271,14 @@ namespace RE
 		using func_t = decltype(&Actor::GetLevel);
 		REL::Relocation<func_t> func{ Offset::Actor::GetLevel };
 		return func(this);
-	}	
-	
-	
+	}
+
 	float Actor::GetMovementDirection() const
 	{
 		using func_t = decltype(&Actor::GetMovementDirection);
 		REL::Relocation<func_t> func{ REL::ID(36935) };
 		return func(this);
 	}
-
 
 	ObjectRefHandle Actor::GetOccupiedFurniture() const
 	{
@@ -290,6 +287,11 @@ namespace RE
 		} else {
 			return {};
 		}
+	}
+
+	PROCESS_TYPE Actor::GetProcessLevel() const
+	{
+		return currentProcess ? currentProcess->processLevel.get() : PROCESS_TYPE::kNone;
 	}
 
 	TESRace* Actor::GetRace() const
@@ -460,7 +462,6 @@ namespace RE
 	{
 		return boolBits.all(BOOL_BITS::kPlayerTeammate);
 	}
-
 
 	bool Actor::IsRunning() const
 	{

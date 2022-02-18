@@ -273,6 +273,15 @@ namespace RE
 		static PlayerCharacter* GetSingleton();
 		static bool             IsGodMode();
 
+		template <class T>
+		void AddEventSink(BSTEventSink<T>* a_sink);
+
+		template <class T>
+		BSTEventSource<T>* GetEventSource();
+
+		template <class T>
+		void RemoveEventSink(BSTEventSink<T>* a_sink);
+
 		void                     ActivatePickRef();
 		void                     AddSkillExperience(ActorValue a_skill, float a_experience);
 		bool                     AttemptPickpocket(TESObjectREFR* a_containerRef, InventoryEntryData* a_entry, std::int32_t a_number, bool a_fromContainer = true);
@@ -289,7 +298,7 @@ namespace RE
 		bool                     HasActorDoingCommand() const;
 		bool                     IsGrabbing() const;
 		void                     PlayPickupEvent(TESForm* a_item, TESForm* a_containerOwner, TESObjectREFR* a_containerRef, EventType a_eventType);
-		void					 SetGodMode(bool a_enable);
+		void                     SetGodMode(bool a_enable);
 		void                     StartGrabObject();
 
 		// members
@@ -465,4 +474,22 @@ namespace RE
 		bool CenterOnCell_Impl(const char* a_cellName, RE::TESObjectCELL* a_cell);
 	};
 	static_assert(sizeof(PlayerCharacter) == 0xBE0);
+
+	template <class T>
+	void PlayerCharacter::AddEventSink(BSTEventSink<T>* a_sink)
+	{
+		GetEventSource<T>()->AddEventSink(a_sink);
+	}
+
+	template <class T>
+	BSTEventSource<T>* PlayerCharacter::GetEventSource()
+	{
+		return static_cast<BSTEventSource<T>*>(this);
+	}
+
+	template <class T>
+	inline void PlayerCharacter::RemoveEventSink(BSTEventSink<T>* a_sink)
+	{
+		GetEventSource<T>()->RemoveEventSink(a_sink);
+	}
 }
