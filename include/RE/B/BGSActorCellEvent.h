@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RE/B/BSPointerHandle.h"
+
 namespace RE
 {
 	// related to cell transitions, trigger everytime when actor enter a new cell \ leave from a previous cell.
@@ -11,9 +13,9 @@ namespace RE
 			kFlags_Leave = 1
 		};
 
-		ActorHandle     refHandle;
-		FormID			cellID;
-		CellFlag	    flags;
+		ActorHandle refHandle;
+		FormID      cellID;
+		CellFlag    flags;
 	};
 	static_assert(sizeof(BGSActorCellEvent) == 0xc);
 }

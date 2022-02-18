@@ -4,8 +4,8 @@
 
 #include "RE/A/AIFormulas.h"
 #include "RE/A/AIProcess.h"
-#include "RE/A/AITimer.h"
 #include "RE/A/AITimeStamp.h"
+#include "RE/A/AITimer.h"
 #include "RE/A/AbsorbEffect.h"
 #include "RE/A/AbstractHeap.h"
 #include "RE/A/ActivateHandler.h"
@@ -47,6 +47,7 @@
 #include "RE/B/BGSAbilityPerkEntry.h"
 #include "RE/B/BGSAcousticSpace.h"
 #include "RE/B/BGSAction.h"
+#include "RE/B/BGSActorCellEvent.h"
 #include "RE/B/BGSActorEvent.h"
 #include "RE/B/BGSAddonNode.h"
 #include "RE/B/BGSAnimationSequencer.h"
