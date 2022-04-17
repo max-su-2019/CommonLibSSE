@@ -51,6 +51,7 @@ namespace RE
 		[[nodiscard]] bool  IsEnchanted() const;
 		[[nodiscard]] bool  IsLeveled() const;
 		[[nodiscard]] bool  IsWorn() const;
+		[[nodiscard]] bool  IsWornLeft() const;
 
 		[[nodiscard]] bool IsOwnedBy(Actor* a_testOwner, bool a_defaultTo = true)
 		{

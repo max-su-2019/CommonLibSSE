@@ -17,6 +17,13 @@ namespace RE
 		stl::memzero(this);
 	}
 
+	void InventoryChanges::Accept(IItemChangeVisitor* a_visitor)
+	{
+		using func_t = decltype(&InventoryChanges::Accept);
+		static REL::Relocation<func_t> func{ REL::ID(15856) };
+		return func(this, a_visitor);
+	}
+
 	void InventoryChanges::AddEntryData(InventoryEntryData* a_entry)
 	{
 		if (!entryList) {
@@ -27,7 +34,7 @@ namespace RE
 		changed = true;
 	}
 
-	TESObjectARMO* InventoryChanges::GetArmorInSlot(std::int32_t a_slot)
+	TESObjectARMO* InventoryChanges::GetArmorInSlot(ArmorSlot a_slot)
 	{
 		using func_t = decltype(&InventoryChanges::GetArmorInSlot);
 		REL::Relocation<func_t> func{ REL::ID(15873) };

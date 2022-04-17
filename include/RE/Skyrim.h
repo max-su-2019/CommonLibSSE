@@ -655,6 +655,8 @@
 #include "RE/G/GTexture.h"
 #include "RE/G/GViewport.h"
 #include "RE/G/GameSettingCollection.h"
+#include "RE/G/GetArmorInSlotFunctor.h"
+#include "RE/G/GetWornMaskVisitor.h"
 #include "RE/G/GiftMenu.h"
 #include "RE/G/GlobalLocations.h"
 #include "RE/G/GlobalPaths.h"

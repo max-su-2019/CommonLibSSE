@@ -215,4 +215,17 @@ namespace RE
 
 		return false;
 	}
+
+	bool InventoryEntryData::IsWornLeft() const
+	{
+		if (extraLists) {
+			for (const auto& xList : *extraLists) {
+				if (xList && (xList->HasType<ExtraWornLeft>())) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
 }

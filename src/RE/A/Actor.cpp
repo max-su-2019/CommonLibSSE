@@ -300,6 +300,13 @@ namespace RE
 		return base ? base->race : nullptr;
 	}
 
+	float Actor::GetReach()
+	{
+		using func_t = decltype(&Actor::GetReach);
+		REL::Relocation<func_t> func{ REL::ID(37588) };
+		return func(this);
+	}
+
 	TESObjectARMO* Actor::GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
 		if (const auto worn = GetWornArmor(a_slot); worn) {
@@ -554,6 +561,13 @@ namespace RE
 		using func_t = decltype(&Actor::UpdateArmorAbility);
 		REL::Relocation<func_t> func{ Offset::Actor::UpdateArmorAbility };
 		return func(this, a_armor, a_extraData);
+	}
+
+	bool Actor::Update3D()
+	{
+		using func_t = decltype(&Actor::Update3D);
+		static REL::Relocation<func_t> func{ REL::ID(19316) };
+		return func(this);
 	}
 
 	void Actor::Update3DModel()

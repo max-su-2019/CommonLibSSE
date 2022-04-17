@@ -16,7 +16,7 @@ namespace RE
 	}
 
 	auto BGSBipedObjectForm::GetSlotMask() const
-		-> BipedObjectSlot
+		-> stl::enumeration<BipedObjectSlot, std::uint32_t>
 	{
 		return *bipedModelData.bipedObjectSlots;
 	}

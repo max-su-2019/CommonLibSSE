@@ -7,6 +7,8 @@
 #include "RE/B/BGSKeywordForm.h"
 #include "RE/B/BGSPickupPutdownSounds.h"
 #include "RE/B/BSTArray.h"
+#include "RE/B/BSTSmartPointer.h"
+#include "RE/B/BipedAnim.h"
 #include "RE/F/FormTypes.h"
 #include "RE/T/TESBipedModelForm.h"
 #include "RE/T/TESBoundObject.h"
@@ -62,7 +64,9 @@ namespace RE
 		// override (BGSKeywordForm)
 		[[nodiscard]] BGSKeyword* GetDefaultKeyword() const override;  // 05
 
-		float GetArmorRating();
+		float          GetArmorRating();
+		TESObjectARMA* GetArmorAddonInSlot(BipedObjectSlot a_slot);
+		void           InitWornArmor(Actor* a_actor, BSTSmartPointer<BipedAnim>* a_biped);
 
 		// members
 		std::uint32_t            armorRating;    // 200 - DNAM - CK value * 100 as a std::uint32_t

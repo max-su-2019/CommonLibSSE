@@ -502,6 +502,7 @@ namespace RE
 		ObjectRefHandle              GetOccupiedFurniture() const;
 		PROCESS_TYPE                 GetProcessLevel() const;
 		TESRace*                     GetRace() const;
+		float                        GetReach();
 		[[nodiscard]] TESObjectARMO* GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] TESObjectARMO* GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] TESObjectARMO* GetWornArmor(FormID a_formID);
@@ -538,6 +539,7 @@ namespace RE
 		void                         StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, std::int32_t a_num, std::int32_t a_total, TESForm* a_owner, bool a_allowWarning);
 		void                         SwitchRace(TESRace* a_race, bool a_player);
 		void                         UpdateArmorAbility(TESForm* a_armor, ExtraDataList* a_extraData);
+		bool                         Update3D();
 		void                         Update3DModel();
 		void                         UpdateHairColor();
 		void                         UpdateSkinColor();
