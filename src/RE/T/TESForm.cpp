@@ -38,7 +38,7 @@ namespace RE
 	{
 		const auto survival = []() {
 			const auto dobj = BGSDefaultObjectManager::GetSingleton();
-			const auto survival = dobj ? dobj->GetObject<TESGlobal>(DEFAULT_OBJECT::kSurvivalModeEnabled) : nullptr;
+			const auto survival = dobj ? dobj->GetDefaultObject<TESGlobal>(DEFAULT_OBJECT::kSurvivalModeEnabled) : nullptr;
 			return survival ? survival->value == 1.0F : false;
 		};
 

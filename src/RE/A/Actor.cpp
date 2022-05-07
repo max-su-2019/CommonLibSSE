@@ -69,6 +69,13 @@ namespace RE
 		return worldSpace && worldSpace->HasMaxHeightData();
 	}
 
+	bool Actor::CanNavigateToPosition(const NiPoint3& a_pos, const NiPoint3& a_new_pos, float a_speed, float a_distance) const
+	{
+		using func_t = decltype(&Actor::CanNavigateToPosition);
+		REL::Relocation<func_t> func{ REL::ID{ 46050 } };
+		return func(this, a_pos, a_new_pos, a_speed, a_distance);
+	}
+
 	bool Actor::CanPickpocket() const
 	{
 		if (!race) {
@@ -144,6 +151,13 @@ namespace RE
 	{
 		auto obj = GetBaseObject();
 		return obj ? obj->As<TESNPC>() : nullptr;
+	}
+
+	float Actor::GetAttackChance(Actor* a_targ, RE::BGSAttackData* a_atkData) const
+	{
+		using func_t = decltype(&Actor::GetAttackChance);
+		REL::Relocation<func_t> func{ REL::ID(49748) };
+		return func(this, a_targ, a_atkData);
 	}
 
 	InventoryEntryData* Actor::GetAttackingWeapon()
@@ -228,7 +242,7 @@ namespace RE
 			return 0;
 		}
 
-		const auto gold = dobj->GetObject<TESObjectMISC>(DEFAULT_OBJECT::kGold);
+		const auto gold = dobj->GetDefaultObject<TESObjectMISC>(DEFAULT_OBJECT::kGold);
 		const auto it = inv.find(gold);
 		return it != inv.end() ? it->second.first : 0;
 	}
@@ -300,7 +314,7 @@ namespace RE
 		return base ? base->race : nullptr;
 	}
 
-	float Actor::GetReach()
+	float Actor::GetReach() const
 	{
 		using func_t = decltype(&Actor::GetReach);
 		REL::Relocation<func_t> func{ REL::ID(37588) };

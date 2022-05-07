@@ -564,7 +564,7 @@ namespace RE
 			return false;
 		}
 
-		auto keyword = dobj->GetObject<BGSKeyword>(DEFAULT_OBJECT::kKeywordHorse);
+		auto keyword = dobj->GetDefaultObject<BGSKeyword>(DEFAULT_OBJECT::kKeywordHorse);
 		return keyword ? HasKeyword(keyword) : false;
 	}
 

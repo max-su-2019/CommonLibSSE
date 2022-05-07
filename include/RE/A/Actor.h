@@ -6,6 +6,7 @@
 #include "RE/A/ActorState.h"
 #include "RE/A/ActorValueOwner.h"
 #include "RE/A/ActorValues.h"
+#include "RE/B/BGSAttackData.h"
 #include "RE/B/BGSBipedObjectForm.h"
 #include "RE/B/BGSEntryPointPerkEntry.h"
 #include "RE/B/BSPointerHandle.h"
@@ -20,6 +21,7 @@
 #include "RE/I/IPostAnimationChannelUpdateFunctor.h"
 #include "RE/M/MagicSystem.h"
 #include "RE/M/MagicTarget.h"
+#include "RE/N/NiMatrix3.h"
 #include "RE/N/NiSmartPointer.h"
 #include "RE/T/TESNPC.h"
 #include "RE/T/TESObjectREFR.h"
@@ -474,6 +476,7 @@ namespace RE
 		void                         AllowBleedoutDialogue(bool a_canTalk);
 		void                         AllowPCDialogue(bool a_talk);
 		bool                         CanFlyHere() const;
+		bool                         CanNavigateToPosition(const NiPoint3& a_pos, const NiPoint3& a_new_pos, float a_speed = 2.0f, float a_distance = 64.0f) const;
 		bool                         CanPickpocket() const;
 		bool                         CanTalkToPlayer() const;
 		void                         ClearArrested();
@@ -485,6 +488,7 @@ namespace RE
 		void                         EvaluatePackage(bool a_immediate = false, bool a_resetAI = false);
 		TESNPC*                      GetActorBase();
 		const TESNPC*                GetActorBase() const;
+		float                        GetAttackChance(Actor* a_targ, RE::BGSAttackData* a_atkData) const;
 		InventoryEntryData*          GetAttackingWeapon();
 		const InventoryEntryData*    GetAttackingWeapon() const;
 		bhkCharacterController*      GetCharController() const;
@@ -502,7 +506,7 @@ namespace RE
 		ObjectRefHandle              GetOccupiedFurniture() const;
 		PROCESS_TYPE                 GetProcessLevel() const;
 		TESRace*                     GetRace() const;
-		float                        GetReach();
+		float                        GetReach() const;
 		[[nodiscard]] TESObjectARMO* GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] TESObjectARMO* GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] TESObjectARMO* GetWornArmor(FormID a_formID);

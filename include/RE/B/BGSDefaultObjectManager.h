@@ -435,24 +435,24 @@ namespace RE
 			return func();
 		}
 
-		[[nodiscard]] TESForm* GetObject(DefaultObject a_object) const noexcept { return GetObject(stl::to_underlying(a_object)); }
+		[[nodiscard]] TESForm* GetDefaultObject(DefaultObject a_object) const noexcept { return GetDefaultObject(stl::to_underlying(a_object)); }
 
 		template <class T>
-		[[nodiscard]] T* GetObject(DefaultObject a_object) const noexcept
+		[[nodiscard]] T* GetDefaultObject(DefaultObject a_object) const noexcept
 		{
-			return GetObject<T>(stl::to_underlying(a_object));
+			return GetDefaultObject<T>(stl::to_underlying(a_object));
 		}
 
-		[[nodiscard]] TESForm* GetObject(std::size_t a_idx) const noexcept
+		[[nodiscard]] TESForm* GetDefaultObject(std::size_t a_idx) const noexcept
 		{
 			assert(a_idx < stl::to_underlying(DefaultObject::kTotal));
 			return objectInit[a_idx] ? objects[a_idx] : nullptr;
 		}
 
 		template <class T>
-		[[nodiscard]] T* GetObject(std::size_t a_idx) const noexcept
+		[[nodiscard]] T* GetDefaultObject(std::size_t a_idx) const noexcept
 		{
-			const auto obj = GetObject(a_idx);
+			const auto obj = GetDefaultObject(a_idx);
 			return obj ? obj->As<T>() : nullptr;
 		}
 

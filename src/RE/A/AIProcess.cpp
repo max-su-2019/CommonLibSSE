@@ -101,6 +101,13 @@ namespace RE
 		return cachedValues && cachedValues->flags.all(CachedValues::Flags::kActorIsGhost);
 	}
 
+	bool AIProcess::PlayIdle(Actor* attacker, DEFAULT_OBJECT smth, TESIdleForm* idle, bool a5, bool a6, Actor* target) const
+	{
+		using func_t = decltype(&AIProcess::PlayIdle);
+		REL::Relocation<func_t> func{ REL::ID(38290) };
+		return func(this, attacker, smth, idle, a5, a6, target);
+	}
+
 	void AIProcess::SetArrested(bool a_arrested)
 	{
 		if (high) {
