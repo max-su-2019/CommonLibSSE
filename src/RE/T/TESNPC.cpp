@@ -105,6 +105,14 @@ namespace RE
 		return iter;
 	}
 
+	float TESNPC::GetBaseScale() const
+	{
+		if (race) {
+			return race->data.height[GetSex()];
+		}
+		return 1.f;
+	}
+
 	float TESNPC::Layer::GetInterpolationValue() const
 	{
 		return static_cast<float>(interpolationValue) / static_cast<float>(100.0);
