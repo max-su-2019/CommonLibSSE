@@ -10,6 +10,7 @@ namespace RE
 	/// Reflection information for any reflected type.
 	class hkClass
 	{
+	public:
 		enum FlagValues
 		{
 			kFlagsNone = 0,

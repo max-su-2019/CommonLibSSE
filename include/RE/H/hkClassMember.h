@@ -3,6 +3,8 @@
 namespace RE
 {
 	class hkCustomAttributes;
+	class hkClass;
+	class hkClassEnum;
 
 	/// Reflection information for a data member of a type.
 	class hkClassMember
