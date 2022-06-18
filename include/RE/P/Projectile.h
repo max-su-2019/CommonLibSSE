@@ -7,6 +7,7 @@
 #include "RE/F/FormTypes.h"
 #include "RE/M/MagicSystem.h"
 #include "RE/N/NiSmartPointer.h"
+#include "RE/N/NiTransform.h"
 #include "RE/T/TESObjectREFR.h"
 
 namespace RE
