@@ -3,6 +3,7 @@
 #include "RE/H/hkStringPtr.h"
 #include "RE/H/hkbBindable.h"
 #include "RE/H/hkbContext.h"
+#include "RE/H/hkbNodeInfo.h"
 
 namespace RE
 {

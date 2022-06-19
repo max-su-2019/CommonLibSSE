@@ -718,6 +718,7 @@
 #include "RE/H/hkbEventBase.h"
 #include "RE/H/hkbGenerator.h"
 #include "RE/H/hkbNode.h"
+#include "RE/H/hkbNodeInfo.h"
 #include "RE/H/hkbRagdollDriver.h"
 #include "RE/H/hkbStateMachine.h"
 #include "RE/H/hkp3AxisSweep.h"
