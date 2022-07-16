@@ -387,6 +387,7 @@ namespace RE
 		[[nodiscard]] constexpr float           GetPositionX() const noexcept { return data.location.x; }
 		[[nodiscard]] constexpr float           GetPositionY() const noexcept { return data.location.y; }
 		[[nodiscard]] constexpr float           GetPositionZ() const noexcept { return data.location.z; }
+		float                                   GetScale() const;
 		NiControllerSequence*                   GetSequence(stl::zstring a_name) const;
 		std::uint32_t                           GetStealValue(const InventoryEntryData* a_entryData, std::uint32_t a_numItems, bool a_useMult) const;
 		float                                   GetWeight() const;

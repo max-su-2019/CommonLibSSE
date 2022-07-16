@@ -70,6 +70,13 @@ namespace RE
 		return worldSpace && worldSpace->HasMaxHeightData();
 	}
 
+	bool Actor::CanNavigateToPosition(const NiPoint3& a_pos, const NiPoint3& a_new_pos, float a_speed, float a_distance) const
+	{
+		using func_t = decltype(&Actor::CanNavigateToPosition);
+		REL::Relocation<func_t> func{ REL::ID{ 47314 } };
+		return func(this, a_pos, a_new_pos, a_speed, a_distance);
+	}
+
 	bool Actor::CanPickpocket() const
 	{
 		if (!race) {
@@ -289,6 +296,13 @@ namespace RE
 		return base ? base->race : nullptr;
 	}
 
+	float Actor::GetReach() const
+	{
+		using func_t = decltype(&Actor::GetReach);
+		REL::Relocation<func_t> func{ REL::ID(38538) };
+		return func(this);
+	}
+
 	TESObjectARMO* Actor::GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot)
 	{
 		if (const auto worn = GetWornArmor(a_slot); worn) {
@@ -488,6 +502,13 @@ namespace RE
 		using func_t = decltype(&Actor::RequestDetectionLevel);
 		REL::Relocation<func_t> func{ Offset::Actor::RequestDetectionLevel };
 		return func(this, a_target, a_priority);
+	}
+
+	std::int32_t Actor::RequestLOS(Actor* a_target, float a_viewCone)
+	{
+		using func_t = decltype(&Actor::RequestLOS);
+		REL::Relocation<func_t> func{ REL::ID(37768) };
+		return func(this, a_target, a_viewCone);
 	}
 
 	void Actor::StealAlarm(TESObjectREFR* a_ref, TESForm* a_object, std::int32_t a_num, std::int32_t a_total, TESForm* a_owner, bool a_allowWarning)

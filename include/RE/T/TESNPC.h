@@ -244,6 +244,7 @@ namespace RE
 		TESRace*                    GetRace();
 		TESNPC*                     GetRootFaceNPC();
 		[[nodiscard]] const TESNPC* GetRootFaceNPC() const;
+		float                       GetBaseScale() const;
 		[[nodiscard]] SEX           GetSex() const;
 		bool                        HasOverlays();
 		void                        SetFaceTexture(BGSTextureSet* a_textureSet);
