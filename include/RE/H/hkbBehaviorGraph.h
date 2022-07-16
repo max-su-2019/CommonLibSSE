@@ -24,16 +24,16 @@ namespace RE
 		// override (hkbGenerator)
 		hkClass* GetClassType() const override;                                                                     // 01
 		void     CalcContentStatistics(hkStatisticsCollector* a_collector, const hkClass* a_class) const override;  // 02
-		void     Unk_04(void) override;                                                                             // 04
-		void     Unk_05(void) override;                                                                             // 05
+		void     Activate(const hkbContext& a_context) override;                                                    // 04
+		void     Update(const hkbContext& a_context, float a_timestep) override;                                    // 05
 		void     Unk_06(void) override;                                                                             // 06
-		void     Unk_07(void) override;                                                                             // 07
+		void     Deactivate(const hkbContext& a_context) override;                                                  // 07
 		void     Unk_09(void) override;                                                                             // 09
 		void     Unk_0C(void) override;                                                                             // 0C
 		void     Unk_16(void) override;                                                                             // 16 - { return 1; }
-		void     Unk_17(void) override;                                                                             // 17
+		void     Generate(const hkbContext& a_context) override;                                                    // 17
 		void     Unk_18(void) override;                                                                             // 18 - { return 1; }
-		void     Unk_19(void) override;                                                                             // 19
+		void     UpdateSync(const hkbContext& a_context) override;                                                  // 19
 
 		// members
 		stl::enumeration<VariableMode, std::uint8_t> variableMode;                     // 048
@@ -46,8 +46,8 @@ namespace RE
 		hkRefVariant                                 pseudoRandomGenerator;            // 078
 		hkRefPtr<hkbGenerator>                       rootGenerator;                    // 080
 		hkRefPtr<hkbBehaviorGraphData>               data;                             // 088
-		hkRefVariant                                 rootGeneratorClone;               // 090
-		hkRefVariant                                 activeNodes;                      // 098
+		void*                                        rootGeneratorClone;               // 090
+		NodeList*                                    activeNodes;                      // 098
 		hkRefVariant                                 activeNodeTemplateToIndexMap;     // 0A0
 		hkRefVariant                                 activeNodesChildrenIndices;       // 0A8
 		hkRefVariant                                 globalTransitionData;             // 0B0
