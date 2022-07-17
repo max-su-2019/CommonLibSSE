@@ -710,6 +710,7 @@
 #include "RE/H/hkbBindable.h"
 #include "RE/H/hkbCharacter.h"
 #include "RE/H/hkbClipGenerator.h"
+#include "RE/H/hkbContext.h"
 #include "RE/H/hkbEvent.h"
 #include "RE/H/hkbEventBase.h"
 #include "RE/H/hkbGenerator.h"

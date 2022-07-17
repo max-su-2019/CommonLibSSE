@@ -2,8 +2,8 @@
 
 #include "RE/H/hkQsTransform.h"
 #include "RE/H/hkaDefaultAnimationControl.h"
-#include "RE/H/hkbGenerator.h"
 #include "RE/H/hkbContext.h"
+#include "RE/H/hkbGenerator.h"
 
 namespace RE
 {
