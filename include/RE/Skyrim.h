@@ -710,6 +710,8 @@
 #include "RE/H/hkaDefaultAnimationControl.h"
 #include "RE/H/hkaSplineCompressedAnimation.h"
 #include "RE/H/hkbBehaviorGraph.h"
+#include "RE/H/hkbBehaviorGraphData.h"
+#include "RE/H/hkbBehaviorGraphStringData.h"
 #include "RE/H/hkbBindable.h"
 #include "RE/H/hkbCharacter.h"
 #include "RE/H/hkbClipGenerator.h"
