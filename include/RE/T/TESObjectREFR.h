@@ -397,11 +397,11 @@ namespace RE
 		[[nodiscard]] float                             GetHeadingAngle(const RE::NiPoint3& a_pos, bool a_abs);
 		[[nodiscard]] float                             GetHeight() const;
 		[[nodiscard]] InventoryItemMap                  GetInventory();
-		[[nodiscard]] InventoryItemMap                  GetInventory(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
-		[[nodiscard]] std::int32_t                      GetInventoryCount(bool no_init = false);
+		[[nodiscard]] InventoryItemMap                  GetInventory(std::function<bool(TESBoundObject&)> a_filter);
+		[[nodiscard]] std::int32_t                      GetInventoryCount();
 		[[nodiscard]] InventoryCountMap                 GetInventoryCounts();
-		[[nodiscard]] InventoryCountMap                 GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit = false);
-		[[nodiscard]] InventoryChanges*                 GetInventoryChanges(bool a_noInit = false);
+		[[nodiscard]] InventoryCountMap                 GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter);
+		[[nodiscard]] InventoryChanges*                 GetInventoryChanges();
 		[[nodiscard]] TESObjectREFR*                    GetLinkedRef(BGSKeyword* a_keyword);
 		[[nodiscard]] REFR_LOCK*                        GetLock() const;
 		[[nodiscard]] LOCK_LEVEL                        GetLockLevel() const;

@@ -543,7 +543,7 @@ namespace RE
 		[[nodiscard]] TESForm*                  GetEquippedObject(bool a_leftHand) const;
 		[[nodiscard]] float                     GetEquippedWeight();
 		[[nodiscard]] std::int32_t              GetFactionRank(TESFaction* a_faction, bool a_isPlayer);
-		[[nodiscard]] std::int32_t              GetGoldAmount(bool a_noInit = false);
+		[[nodiscard]] std::int32_t              GetGoldAmount();
 		[[nodiscard]] ActorHandle               GetHandle();
 		[[nodiscard]] NiAVObject*               GetHeadPartObject(BGSHeadPart::HeadPartType a_type);
 		[[nodiscard]] float                     GetHeight();
@@ -559,14 +559,14 @@ namespace RE
 		[[nodiscard]] const float               GetReach() const;
 		[[nodiscard]] bool                      GetRider(NiPointer<Actor>& a_outRider);
 		[[nodiscard]] TESObjectARMO*            GetSkin() const;
-		[[nodiscard]] TESObjectARMO*            GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot, bool a_noInit = false);
+		[[nodiscard]] TESObjectARMO*            GetSkin(BGSBipedObjectForm::BipedObjectSlot a_slot);
 		[[nodiscard]] SOUL_LEVEL                GetSoulSize() const;
 		[[nodiscard]] TESFaction*               GetVendorFaction();
 		[[nodiscard]] const TESFaction*         GetVendorFaction() const;
 		[[nodiscard]] float                     GetVoiceRecoveryTime();
 		[[nodiscard]] float                     GetWarmthRating() const;
-		[[nodiscard]] TESObjectARMO*            GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot, bool a_noInit = false);
-		[[nodiscard]] TESObjectARMO*            GetWornArmor(FormID a_formID, bool a_noInit = false);
+		[[nodiscard]] TESObjectARMO*            GetWornArmor(BGSBipedObjectForm::BipedObjectSlot a_slot);
+		[[nodiscard]] TESObjectARMO*            GetWornArmor(FormID a_formID);
 		[[nodiscard]] bool                      HasKeywordString(std::string_view a_formEditorID);
 		[[nodiscard]] bool                      HasLineOfSight(TESObjectREFR* a_ref, bool& a_arg2);
 		[[nodiscard]] bool                      HasMagicEffectWithKeyword(RE::BGSKeyword* a_kywd);

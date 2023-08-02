@@ -346,15 +346,15 @@ namespace RE
 	auto TESObjectREFR::GetInventory()
 		-> InventoryItemMap
 	{
-		return GetInventory(DEFAULT_INVENTORY_FILTER, false);
+		return GetInventory(DEFAULT_INVENTORY_FILTER);
 	}
 
-	auto TESObjectREFR::GetInventory(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit)
+	auto TESObjectREFR::GetInventory(std::function<bool(TESBoundObject&)> a_filter)
 		-> InventoryItemMap
 	{
 		InventoryItemMap results;
 
-		auto invChanges = GetInventoryChanges(a_noInit);
+		auto invChanges = GetInventoryChanges();
 		if (invChanges && invChanges->entryList) {
 			for (auto& entry : *invChanges->entryList) {
 				if (entry && entry->object && a_filter(*entry->object)) {
@@ -403,9 +403,9 @@ namespace RE
 		return results;
 	}
 
-	std::int32_t TESObjectREFR::GetInventoryCount(bool a_noInit)
+	std::int32_t TESObjectREFR::GetInventoryCount()
 	{
-		auto         counts = GetInventoryCounts(DEFAULT_INVENTORY_FILTER, a_noInit);
+		auto         counts = GetInventoryCounts(DEFAULT_INVENTORY_FILTER);
 		std::int32_t total = 0;
 		for (auto& elem : counts) {
 			total += elem.second;
@@ -416,13 +416,13 @@ namespace RE
 	auto TESObjectREFR::GetInventoryCounts()
 		-> InventoryCountMap
 	{
-		return GetInventoryCounts(DEFAULT_INVENTORY_FILTER, false);
+		return GetInventoryCounts(DEFAULT_INVENTORY_FILTER);
 	}
 
-	auto TESObjectREFR::GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter, bool a_noInit)
+	auto TESObjectREFR::GetInventoryCounts(std::function<bool(TESBoundObject&)> a_filter)
 		-> InventoryCountMap
 	{
-		auto              itemMap = GetInventory(std::move(a_filter), a_noInit);
+		auto              itemMap = GetInventory(std::move(a_filter));
 		InventoryCountMap results;
 		for (const auto& [key, value] : itemMap) {
 			results[key] = value.first;
@@ -432,12 +432,9 @@ namespace RE
 
 	// this does not behave like Skyrim's implementation; Skyrim's does not attempt to initialize the container.
 	// which is why we have to add "no_init" here if we don't want that to happen.
-	InventoryChanges* TESObjectREFR::GetInventoryChanges(bool a_noInit)
+	InventoryChanges* TESObjectREFR::GetInventoryChanges()
 	{
 		if (!extraList.HasType<ExtraContainerChanges>()) {
-			if (a_noInit) {
-				return nullptr;
-			}
 			if (!InitInventoryIfRequired()) {
 				ForceInitInventoryChanges();
 			}
